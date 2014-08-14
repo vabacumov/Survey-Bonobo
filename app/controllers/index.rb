@@ -1,5 +1,5 @@
 get '/' do
-redirect '/surveys'
+  redirect '/surveys'
 end
 
 get '/surveys' do
