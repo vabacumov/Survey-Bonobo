@@ -1,6 +1,5 @@
 var ajaxCall = function(event) {
   event.preventDefault();
-  console.log("preventing default")
   $.ajax({
     url: "/surveys",
     type: "POST",
@@ -10,6 +9,7 @@ var ajaxCall = function(event) {
     $('#new_survey').after($(response.html)); //appends new question form
           // form title includes submitted surbey title
     $("#new_question").on("submit",  createQuestion);
+    $("#finish_button").css("display", "inline");
     console.log("Success!");
   })
   .fail(function() {

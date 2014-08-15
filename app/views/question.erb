@@ -1,1 +1,12 @@
-<div id="<%=question.id%>"><span><%=question.id%></span><%=question.content%> <span><a data-id="<%=question.id%>" href="#" id="questionDelete">Delete</a></span> </div>
+<div class="question" id="<%=question.id%>">
+  <div class="question_id">
+    <%=question.id%>
+  </div>
+  <div class="question_content">
+    <%=question.content%>
+  </div>
+  <div class="question_delete">
+    <a data-id="<%=question.id%>" href="#" class="questionDeleteButton">Delete</a>
+  </div>
+  <div class="clearfix"></div>
+</div>

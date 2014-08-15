@@ -40,3 +40,45 @@ h2 {
   text-shadow: 2px 2px black;
 }
 
+#finish_button{
+  display: none;
+}
+
+#question_list{
+  margin-top: 10px;
+}
+
+.question{
+  width: 700px;
+}
+
+.rowColorGray{
+  background-color: #aaa;
+}
+
+.rowColorGreen{
+  background-color: green;
+}
+
+.question_id{
+  width:5%;
+  float: left;
+  padding: 5px;
+}
+
+.question_content{
+  width: 60%;
+  float: left;
+  padding: 5px;
+}
+
+.question_delete{
+  width: 25%;
+  float: left;
+  padding: 5px;
+}
+
+.clearfix{
+  clear: both;
+}
+

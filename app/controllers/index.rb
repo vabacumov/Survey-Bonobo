@@ -3,7 +3,8 @@ get '/' do
 end
 
 get '/surveys' do
- erb :index
+  @surveys = Survey.all
+  erb :index
 end
 
 get '/surveys/new' do
@@ -26,19 +27,20 @@ post '/questions' do
   question.content = params[:content]
   question.survey_id = params[:survey_id]
   question.save
+
   content_type :json
   question_partial = erb :question, :layout => false, :locals => {question: question}
   {html: question_partial}.to_json
 end
 
 post '/questions/:id/delete' do
-  quetion = Question.find(params[:id])
+  question = Question.find(params[:id])
   question.destroy
   params[:id].to_json
 end
 
 #This is route for submitting the survey and questions
-post '/survey/finish' do
+get '/survey/finish' do
   @surveys = Survey.all
   @new_survey = false
   erb :index
@@ -49,7 +51,7 @@ get '/survey/:id' do
   erb :survey_page
 end
 
-post '/surveys/answers/:id' do
+post '/surveys/answers' do
   i = 1
   Survey.find(params[:id]).questions.each do |q|
     selector = "yes#{i}".to_sym
@@ -61,6 +63,8 @@ post '/surveys/answers/:id' do
     q.save
     i += 1
   end
+
+  redirect '/'
 end
 
 
