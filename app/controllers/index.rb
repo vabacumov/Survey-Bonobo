@@ -8,6 +8,7 @@ get '/surveys' do
 end
 
 get '/surveys/new' do
+  @surveys = Survey.all
   @new_survey = true
   erb :index
 end
