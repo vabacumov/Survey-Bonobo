@@ -3,7 +3,8 @@ get '/' do
 end
 
 get '/surveys' do
- erb :index
+  @surveys = Survey.all
+  erb :index
 end
 
 get '/surveys/new' do
@@ -39,7 +40,7 @@ post '/questions/:id/delete' do
 end
 
 #This is route for submitting the survey and questions
-post '/survey/finish' do
+get '/survey/finish' do
   @surveys = Survey.all
   @new_survey = false
   erb :index
@@ -50,7 +51,7 @@ get '/survey/:id' do
   erb :survey_page
 end
 
-post '/surveys/answers/:id' do
+post '/surveys/answers' do
   i = 1
   Survey.find(params[:id]).questions.each do |q|
     selector = "yes#{i}".to_sym
@@ -62,6 +63,8 @@ post '/surveys/answers/:id' do
     q.save
     i += 1
   end
+
+  redirect '/'
 end
 
 
