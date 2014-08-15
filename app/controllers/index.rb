@@ -67,4 +67,12 @@ post '/surveys/answers' do
   redirect '/'
 end
 
+get '/surveys/answers/:id' do
+  @survey = Survey.find(params[:id])
+  @all_questions = survey.questions
+  erb :survey_chart
+end
+
+
+
 
