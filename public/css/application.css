@@ -6,7 +6,6 @@
   left: 0;
   z-index: -2;
 }
-
 div#title_div {
   position: relative;
 }
@@ -40,3 +39,4 @@ h2 {
   color: white;
   text-shadow: 2px 2px black;
 }
+
