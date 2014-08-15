@@ -15,13 +15,21 @@
 </header>
 
 <% if @new_survey == true %>
-
   <%= erb :new_survey %>
-
 <% end %>
 
 
 <div id="question_list">
 
 
+</div>
+
+<div id="surveylist">
+  <% if @surveys %>
+    <% if @surveys.count > 0 %>
+      <% surveys.each do |survey| %>
+        <a href="/survey/<%= survey.id %>"><%= survey.title %></a>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
