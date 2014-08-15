@@ -4,7 +4,7 @@ $(document).ready(function() {
   // when we try to bind to them
 
   // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-  var surveyCreater = $("#create_survey_button");
+  var surveyCreater = $("#scroll_to_new_survey");
   surveyCreater.click(function(){
     var scrollToNewSurvey = $("#new_survey");
     surveyCreater.animate(scrollToNewSurvey, 1000);
