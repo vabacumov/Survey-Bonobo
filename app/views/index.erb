@@ -25,9 +25,11 @@
 </div>
 
 <div id="surveylist">
-  <% if @surveys.count > 0 %>
-    <% surveys.each do |survey| %>
-      <a href="/survey/<%= survey.id %>"><% = survey.title %></a>
+  <% if @surveys %>
+    <% if @surveys.count > 0 %>
+      <% surveys.each do |survey| %>
+        <a href="/survey/<%= survey.id %>"><%= survey.title %></a>
+      <% end %>
     <% end %>
   <% end %>
 </div>
