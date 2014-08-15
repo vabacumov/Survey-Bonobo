@@ -18,21 +18,27 @@ h1  {
   text-align: center;
 }
 
+#survey_form {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+#finish_button{
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
 #scroll_to_new_survey {
-  margin: 10% 40% 0 40%;
-  width: 100%;
+  width: 400px;
+  margin: auto;
+  text-align: center
 }
 
 #scroll_to_new_survey input{
-  margin: 0 5%;
   background-color:white;
   border-radius: 7px;
-  transition: transform 0.5s;
-}
-
-#scroll_to_new_survey input:hover{
-  opacity: 0.5;
-  transform:rotate(720deg);
 }
 
 h2 {
@@ -40,12 +46,35 @@ h2 {
   text-shadow: 2px 2px black;
 }
 
+#question_form{
+  width: 600px;
+  margin: auto;
+}
+
 #finish_button{
   display: none;
 }
 
 #question_list{
-  margin-top: 10px;
+  width: 600px;
+  margin: auto;
+}
+
+#surveylist{
+  padding: 10px;
+  width: 400px;
+  margin: auto;
+  background-color: #555;
+  text-align: center;
+}
+
+.survey_item{
+  color: #eee;
+  padding: 5px;
+}
+
+.survey_item a{
+  color: #eee;
 }
 
 .question{
