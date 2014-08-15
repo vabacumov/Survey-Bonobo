@@ -9,6 +9,7 @@
 div#title_div {
   position: relative;
 }
+
 h1  {
   margin: auto;
   width: 100%;
@@ -16,6 +17,26 @@ h1  {
   text-shadow: 2px 2px black;
   text-align: center;
 }
-#new_survey {
-  position: relative;
+
+#scroll_to_new_survey {
+  margin: 10% 40% 0 40%;
+  width: 100%;
 }
+
+#scroll_to_new_survey input{
+  margin: 0 5%;
+  background-color:white;
+  border-radius: 7px;
+  transition: transform 0.5s;
+}
+
+#scroll_to_new_survey input:hover{
+  opacity: 0.5;
+  transform:rotate(720deg);
+}
+
+h2 {
+  color: white;
+  text-shadow: 2px 2px black;
+}
+

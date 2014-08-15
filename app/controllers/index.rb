@@ -26,7 +26,7 @@ post '/questions' do
   question.content = params[:content]
   question.survey_id = params[:survey_id]
   question.save
-
+  content_type :json
   question_partial = erb :question, :layout => false, :locals => {question: question}
   {html: question_partial}.to_json
 end

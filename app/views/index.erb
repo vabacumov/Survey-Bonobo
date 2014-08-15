@@ -2,15 +2,26 @@
   <div id="title_div">
     <h1 id="title">Survey Bonobo</h1>
   </div>
+
   <img id="header_img" src="/images/landingpage.png">
+
+  <div id="scroll_to_new_survey">
+    <h2>Create Survey....</h2>
+    <form action="/surveys/new" method="get">
+      <input id="create_survey_button" type="submit" value"Create Survey..">
+    </form>
+  </div>
+
 </header>
 
 <% if @new_survey == true %>
+
   <%= erb :new_survey %>
+
 <% end %>
 
 
 <div id="question_list">
-  
-  
+
+
 </div>
