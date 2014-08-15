@@ -9,7 +9,8 @@ var ajaxCall = function(event) {
   .done(function(response) {
     $('#new_survey').after($(response.html)); //appends new question form
           // form title includes submitted surbey title
-      console.log("Success!");
+    $("#new_question").on("submit",  createQuestion);
+    console.log("Success!");
   })
   .fail(function() {
     console.log("Failed!");

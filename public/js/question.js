@@ -10,14 +10,13 @@ var createQuestion = function(event){
   event.preventDefault();
 
   $.ajax({
-    dataType: 'json',
     url: "/questions",
     type: "POST",
     data: {
       content: $("#content").val(),
       survey_id: $("#survey_id").val()
     }
-  }).done(questionSuccess(data))
+  }).done(questionSuccess)
 }
 
 var deleteQuestion = function(event){
@@ -26,8 +25,8 @@ var deleteQuestion = function(event){
   $.ajax({
   url: "/questions/" + $(this).data("id") + "/delete",
   type: "POST",
-  }).done(questionSuccess(data))
+  }).done(questionSuccess)
 }
 
-$("#new_question").on("submit",  createQuestion);
+// $("#new_question").on("submit",  createQuestion);
 $("#questionDelete").on("click", deleteQuestion);

@@ -27,5 +27,5 @@ $(document).ready(function() {
 
 // document.getById("create_survey_button").addEventListener("click",function(){
 
-})
+
 
