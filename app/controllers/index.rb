@@ -22,5 +22,18 @@ post '/surveys' do
 end
 
 post '/questions' do
-  Question.create()
+  question = Question.new
+  question.content = params[:content]
+  question.survey_id = params[:survey_id]
+  question.save
+
+  question_partial = erb :question, :layout => false, :locals => {question: question}
+  {html: question_partial}.to_json
+end
+
+post '/questions/:id/delete' do
+  quetion = Question.find(params[:id])
+  question.destroy
+
+  params[:id].to_json
 end
