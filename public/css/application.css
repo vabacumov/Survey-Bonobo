@@ -28,7 +28,7 @@ h1  {
   margin: 0 5%;
   background-color:white;
   border-radius: 7px;
-  transition: transform 2s;
+  transition: transform 0.5s;
 }
 
 #scroll_to_new_survey input:hover{
