@@ -37,3 +37,31 @@ post '/questions/:id/delete' do
   question.destroy
   params[:id].to_json
 end
+
+#This is route for submitting the survey and questions
+post '/survey/finish' do
+  @surveys = Survey.all
+  @new_survey = false
+  erb :index
+end
+
+get '/survey/:id' do
+  @survey = Survey.find(params[:id])
+  erb :survey_page
+end
+
+post '/surveys/answers/:id' do
+  i = 1
+  Survey.find(params[:id]).questions.each do |q|
+    selector = "yes#{i}".to_sym
+    if params[selector] == "yes"
+      q.yes += 1
+    else
+      q.no += 1
+    end
+    q.save
+    i += 1
+  end
+end
+
+

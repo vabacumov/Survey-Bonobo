@@ -15,9 +15,7 @@
 </header>
 
 <% if @new_survey == true %>
-
   <%= erb :new_survey %>
-
 <% end %>
 
 
@@ -27,4 +25,14 @@
 <br>
 <div id="finish_button">
   <button onclick="finishSurvey()">Finish</button>
+</div>
+
+<div id="surveylist">
+  <% if @surveys %>
+    <% if @surveys.count > 0 %>
+      <% surveys.each do |survey| %>
+        <a href="/survey/<%= survey.id %>"><%= survey.title %></a>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
