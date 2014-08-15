@@ -14,7 +14,10 @@ var deleteQuestion = function(event){
 }
 
 var questionSuccess = function(data){
-  $("#question_list").append(data.html)
+  var new_question = $(data.html);
+  new_question.addClass("rowColorGray");
+  new_question.css("border", "1px solid black");
+  $("#question_list").append(new_question);
   $("#questionDelete").on('click', deleteQuestion);
 }
 
