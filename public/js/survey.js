@@ -1,6 +1,5 @@
 var ajaxCall = function(event) {
   event.preventDefault();
-  console.log("preventing default")
   $.ajax({
     url: "/surveys",
     type: "POST",

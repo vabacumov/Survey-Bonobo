@@ -1,22 +1,7 @@
-var questionSuccess = function(data){
-  $("#question_list").append(data.html)
-}
 
 var deleteSuccess = function(data){
-  $("#" + data).remove();
-}
-
-var createQuestion = function(event){
-  event.preventDefault();
-
-  $.ajax({
-    url: "/questions",
-    type: "POST",
-    data: {
-      content: $("#content").val(),
-      survey_id: $("#survey_id").val()
-    }
-  }).done(questionSuccess)
+  var selector = "#" + JSON.parse(data);
+  $(selector).remove();
 }
 
 var deleteQuestion = function(event){
@@ -25,8 +10,20 @@ var deleteQuestion = function(event){
   $.ajax({
   url: "/questions/" + $(this).data("id") + "/delete",
   type: "POST",
-  }).done(questionSuccess)
+  }).done(deleteSuccess)
 }
 
-// $("#new_question").on("submit",  createQuestion);
-$("#questionDelete").on("click", deleteQuestion);
+var questionSuccess = function(data){
+  $("#question_list").append(data.html)
+  $("#questionDelete").on('click', deleteQuestion);
+}
+
+var createQuestion = function(event){
+  event.preventDefault();
+
+  $.ajax({
+    url: "/questions",
+    type: "POST",
+    data: $(this).serialize()
+  }).done(questionSuccess)
+}
