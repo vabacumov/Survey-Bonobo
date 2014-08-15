@@ -69,7 +69,11 @@ end
 
 get '/surveys/answers/:id' do
   @survey = Survey.find(params[:id])
-  @all_questions = survey.questions
+  @all_questions = @survey.questions
+  @array = []
+  @all_questions.each_with_index do |question, index|
+    @array << Hash[ "yes_response" => question.yes, "no_response" => question.no  ]
+  end
   erb :survey_chart
 end
 
