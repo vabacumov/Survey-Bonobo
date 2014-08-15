@@ -1,3 +1,6 @@
+var finishSurvey = function(){
+  window.location = "/survey/finish"
+}
 
 var deleteSuccess = function(data){
   var selector = "#" + JSON.parse(data);

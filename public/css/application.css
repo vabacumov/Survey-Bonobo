@@ -40,6 +40,10 @@ h2 {
   text-shadow: 2px 2px black;
 }
 
+#finish_button{
+  display: none;
+}
+
 #question_list{
   margin-top: 10px;
 }
