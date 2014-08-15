@@ -29,3 +29,10 @@ post '/questions' do
   question_partial = erb :question, :layout => false, :locals => {question: question}
   {html: question_partial}.to_json
 end
+
+post '/questions/:id/delete' do
+  quetion = Question.find(params[:id])
+  question.destroy
+
+  params[:id].to_json
+end
