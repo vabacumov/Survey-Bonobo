@@ -6,7 +6,6 @@
   left: 0;
   z-index: -2;
 }
-
 div#title_div {
   position: relative;
 }
@@ -16,4 +15,7 @@ h1  {
   color: #ffffff;
   text-shadow: 2px 2px black;
   text-align: center;
+}
+#new_survey {
+  position: relative;
 }

@@ -1,5 +1,5 @@
 get '/' do
-redirect '/surveys'
+ redirect '/surveys'
 end
 
 get '/surveys' do
@@ -17,7 +17,8 @@ post '/surveys' do
   survey.author = params[:author]
   survey.save
   content_type :json
-  survey.id.to_json
+  question_data = erb :new_question, :layout => false, :locals => {survey_id: survey.id}
+  {html: question_data}.to_json
 end
 
 post '/questions' do
