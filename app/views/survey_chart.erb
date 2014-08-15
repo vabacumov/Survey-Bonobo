@@ -1,0 +1,12 @@
+<h1><%= @survey.title %></h1>
+<% @all_questions.each_with_index do |question, index|%>
+<h3><%= question.content %></h3>
+<p>"Yes" answers:</p>
+<div style="width:<%= @array[index]["yes_response"] %>0px; height:30px; background-color:blue;">
+</div><br>
+<p>"No" answers:</p>
+<div style="width:<%= @array[index]["no_response"] %>0px; height:30px; background-color:red;">
+</div><br>
+<% end %>
+
+
