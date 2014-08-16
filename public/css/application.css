@@ -14,7 +14,7 @@ h1  {
   margin: auto;
   width: 100%;
   color: #ffffff;
-  text-shadow: 2px 2px black;
+  text-shadow: 3px 3px black;
   text-align: center;
 }
 
@@ -22,6 +22,10 @@ h1  {
   width: 600px;
   margin: auto;
   text-align: center;
+}
+
+#create_survey_button:hover{
+  opacity:0.5;
 }
 
 #finish_button{
@@ -64,17 +68,28 @@ h2 {
   padding: 10px;
   width: 400px;
   margin: auto;
-  background-color: #555;
+  opacity:0.8;
+  background-color: #E6E6E7;
   text-align: center;
+  border-radius: 1em;
 }
 
 .survey_item{
-  color: #eee;
+  color: black;
   padding: 5px;
 }
 
 .survey_item a{
-  color: #eee;
+  color: #3D3C24;
+  text-decoration: none;
+}
+
+.survey_item a:hover{
+  color:#2B26A0;
+}
+
+.survey_item a:after{
+  color:#3D3C24;
 }
 
 .question{
@@ -111,3 +126,11 @@ h2 {
   clear: both;
 }
 
+#new_question{
+  margin: 1% 44.5% 0 44.5%;
+  width: 50%;
+}
+
+#finish_button{
+  margin: 0 48% 0 48.5%;
+}

@@ -3,8 +3,10 @@
   <input type="hidden" name="id" value="<%=@survey.id%>">
   <% @survey.questions.each do |question| %>
     <p><%= question.content %></p>
-    <input type="radio" name="yes<%=question.id%>" value="Yes"><br>
-    <input type="radio" name="no<%=question.id%>" value="No">
+    <label for="yes">Yes:</label>
+    <input id="yes" type="radio" name="yes<%=question.id%>" value="Yes"><br>
+    <label for="no">No:</label>
+    <input id="no" type="radio" name="no<%=question.id%>" value="No">
   <% end %>
   <br>
   <input type ="submit" value="Submit survey!">
